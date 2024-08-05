@@ -30,5 +30,7 @@ public class Main {
         MoviesDto movieByTitle = movieService.findByTitle("Inception");
         System.out.println(movieByTitle.getTitle());
 
+        System.out.println("로그인 구현 완료!");
+
     }
 }
