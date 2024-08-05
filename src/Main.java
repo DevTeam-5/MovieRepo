@@ -1,3 +1,5 @@
+import member.dtos.ReservationDto;
+import member.services.ReservaionService;
 import movies.dtos.MoviesDto;
 import movies.services.MoviesService;
 
@@ -9,6 +11,10 @@ public class Main {
         // MovieService 인스턴스 생성
         MoviesService movieService = new MoviesService();
 
+        //Reservation
+       /* ReservaionService reservaionService = new ReservaionService();
+        List<ReservationDto> reservation = reservaionService.getReservation();
+        System.out.println(reservation);*/
         // getAllMovies 메서드 호출하여 전체 영화 조회
         List<MoviesDto> movie = movieService.getMovies();
 
