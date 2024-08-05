@@ -16,6 +16,7 @@ public class Main {
         List<ReservationDto> reservation = reservaionService.getReservation();
         System.out.println(reservation);*/
         // getAllMovies 메서드 호출하여 전체 영화 조회
+        System.out.println("----------------------전체 영화 조회------------------");
         List<MoviesDto> movie = movieService.getMovies();
 
         // 조회된 영화 리스트 출력
@@ -33,10 +34,18 @@ public class Main {
             System.out.println("-----");
         }
 
+        // findByTitle, findByDirector, findByGenre 메서드 호출하여 특정 영화 조회
+        System.out.println("----------------------Title로 영화 조회하기------------------");
         MoviesDto movieByTitle = movieService.findByTitle("Inception");
-        System.out.println(movieByTitle.getTitle());
+        System.out.println(movieByTitle);
 
-        System.out.println("로그인 구현 완료!");
+        System.out.println("----------------------Director로 영화 조회하기------------------");
+        List<MoviesDto> movieByDirector = movieService.findByDirector("Bong Joon-ho");
+        System.out.println(movieByDirector.get(0));
+
+        System.out.println("----------------------Genre로 영화 조회하기------------------");
+        List<MoviesDto> movieByGenre = movieService.findByGenre("Action");
+        System.out.println(movieByGenre.get(0));
 
     }
 }

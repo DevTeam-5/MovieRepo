@@ -87,6 +87,22 @@ public class MoviesDto {
         return attendance;
     }
 
+    @Override
+    public String toString() {
+        return "MoviesDto{" +
+                "m_id=" + m_id +
+                ", title='" + title + '\'' +
+                ", director='" + director + '\'' +
+                ", genre=" + genre +
+                ", rel_date=" + rel_date +
+                ", publisher='" + publisher + '\'' +
+                ", rate=" + rate +
+                ", actors='" + actors + '\'' +
+                ", attendance=" + attendance +
+                ", duration=" + duration +
+                '}';
+    }
+
     public void setAttendance(int attendance) {
         this.attendance = attendance;
     }
