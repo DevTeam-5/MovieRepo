@@ -9,7 +9,15 @@ public class MoviesService {
 
     //영화 전체 조회
     public List<MoviesDto> getMovies(){
-        List<MoviesDto> movies= Utility.readListData( "SELECT m_id, title, director, genre, rel_date FROM movie" ,new MoviesDto());
+        List<MoviesDto> movies= Utility.readListData( "SELECT m_id, title, director, genre, rel_date, publisher, rate, actors, attendance, duration FROM movie" ,new MoviesDto());
+        return movies;
+    }
+
+
+    public MoviesDto findByTitle(String title) {
+        // SQL 쿼리 문자열을 동적으로 생성
+        String query = "SELECT m_id, title, director, genre, rel_date, publisher, rate, actors, attendance, duration FROM movie WHERE title='" + title + "'";
+        MoviesDto movies = Utility.readData(query, new MoviesDto());
         return movies;
     }
 }
