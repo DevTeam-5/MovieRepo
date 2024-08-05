@@ -1,18 +1,14 @@
-package member.domains;
+package member.dtos;
 
-import member.dtos.AddMemberDTO;
+import member.domains.Role;
 
-public class Member {
-    private int u_id;
+public class AddMemberDTO {
     private String name;
     private String email;
     private String password;
     private Role role;
     private String phone_num;
 
-    public int getU_id() {
-        return u_id;
-    }
 
     public String getName() {
         return name;
@@ -32,10 +28,5 @@ public class Member {
 
     public String getPhone_num() {
         return phone_num;
-    }
-
-    public Member() {}
-    public Member(AddMemberDTO memberDto) {
-
     }
 }
