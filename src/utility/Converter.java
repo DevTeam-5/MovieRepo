@@ -55,13 +55,22 @@ public class Converter {
 
     private <E> void mapToDTO(ResultSet resultSet, E form, Field[] fields)
             throws SQLException, IllegalAccessException {
-        for (int i = 0; i < fields.length; i++) {
-            Object value = resultSet.getObject(fields[i].getName()); // value 가 String 값인 경우에는 파싱을 따로 해줘야해 -> 파싱 전용 메서드를 만들어
+        for (Field field : fields) {
+            field.setAccessible(true);
+            Object value = resultSet.getObject(field.getName());
 
-            fields[i].setAccessible(true);
-            fields[i].set(form, value); // Object 값으로 value 한개씩 뽑아
+            if (field.getType().isEnum() && value instanceof String) {
+                // Enum 타입 필드에 문자열 값을 Enum으로 변환
+                String enumValue = (String) value;
+                @SuppressWarnings("unchecked")
+                Class<? extends Enum> enumClass = (Class<? extends Enum>) field.getType();
+                value = Enum.valueOf(enumClass, enumValue);
+            }
+
+            field.set(form, value);
         }
     }
+
 
     public <E> void setData(PreparedStatement ps, E form) throws IllegalAccessException, SQLException {
         Class<?> clazz = form.getClass();
