@@ -37,6 +37,6 @@ public class Main {
         System.out.println(movieByTitle.getTitle());
 
         System.out.println("로그인 구현 완료!");
-
+        System.out.println("정지수 test");
     }
 }
