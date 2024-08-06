@@ -7,9 +7,7 @@ public class ReservationDto {
     private int count;
 
 
-    }
 
-    }
 
     public int getUser_id() {
         return user_id;
@@ -33,5 +31,13 @@ public class ReservationDto {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public int getS_id() {
+        return s_id;
+    }
+
+    public void setS_id(int s_id) {
+        this.s_id = s_id;
     }
 }

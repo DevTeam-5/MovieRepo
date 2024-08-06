@@ -39,13 +39,14 @@ public class Main {
         MoviesDto movieByTitle = movieService.findByTitle("Inception");
         System.out.println(movieByTitle);
 
-        System.out.println("----------------------Director로 영화 조회하기------------------");
-        List<MoviesDto> movieByDirector = movieService.findByDirector("Bong Joon-ho");
-        System.out.println(movieByDirector.get(0));
-
-        System.out.println("----------------------Genre로 영화 조회하기------------------");
-        List<MoviesDto> movieByGenre = movieService.findByGenre("Action");
-        System.out.println(movieByGenre.get(0));
-
+//        System.out.println("----------------------Director로 영화 조회하기------------------");
+//        List<MoviesDto> movieByDirector = movieService.findByDirector("Bong Joon-ho");
+//        System.out.println(movieByDirector.get(0));
+//
+//        System.out.println("----------------------Genre로 영화 조회하기------------------");
+//        List<MoviesDto> movieByGenre = movieService.findByGenre("Action");
+//        System.out.println(movieByGenre.get(0));
+//
+//    }
     }
 }
