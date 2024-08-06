@@ -6,18 +6,10 @@ public class ReservationDto {
     private int s_id;
     private int count;
 
-    public ReservationDto() {
+
     }
 
-    public int getS_id() {
-        return s_id;
     }
-
-    public void setS_id(int s_id) {
-        this.s_id = s_id;
-    }
-
-
 
     public int getUser_id() {
         return user_id;
@@ -41,15 +33,5 @@ public class ReservationDto {
 
     public void setCount(int count) {
         this.count = count;
-    }
-
-    @Override
-    public String toString() {
-        return "ReservationDto{" +
-                "user_id=" + user_id +
-                ", m_id=" + m_id +
-                ", s_id=" + s_id +
-                ", count=" + count +
-                '}';
     }
 }
